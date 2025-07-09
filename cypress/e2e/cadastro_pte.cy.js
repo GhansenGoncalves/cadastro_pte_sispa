@@ -25,7 +25,8 @@ describe('Cadastrar PTE', () => {
     
     // Este seletor é muito específico e frágil. Tente usar 'contains' se possível.
     cy.get('.col.br-input').type('teste cypress');
-    cy.get('.col-12 > .ng-untouched > .br-list > [role="listitem"] > .row > .col-auto > .br-button > .fas').click();
+    // Preferindo seletor mais robusto para clicar no botão de adicionar
+    cy.get('i.fas.fa-plus').eq(0).parent().click();
     cy.get('.swal2-cancel').click();
     cy.get('[for="certificadoRETnaoSeAplica"]').click();
     cy.get('#justificativa').type('Uma breve justificativa.');
