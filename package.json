@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "test": "cypress run --spec \"cypress/e2e/cadastro_pte.cy.js\" --config-file cypress.config.once.js",
+    "test:once": "node run-test-once.js",
+    "test:open": "cypress open --config-file cypress.config.once.js",
+    "test:headless": "cypress run --headless --spec \"cypress/e2e/cadastro_pte.cy.js\" --config-file cypress.config.once.js"
+  },
   "devDependencies": {
     "cypress": "^14.5.0"
   }

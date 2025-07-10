@@ -1,0 +1,46 @@
+{
+  "baseUrl": "https://homolog.agricultura.gov.br/sia/?enableMockedUsers=true",
+  "timeouts": {
+    "default": 10000,
+    "long": 20000,
+    "veryLong": 30000
+  },
+  "testData": {
+    "marcaComercial": "Teste de automação no Cypress",
+    "descricao": "teste cypress",
+    "nomeQuimico": "Glifosato",
+    "justificativa": "Uma breve justificativa.",
+    "justificativaEmergencial": "Uma breve justificativa para uso emergencial.",
+    "exposicao": "Exposição ao produto"
+  },
+  "embalagem": {
+    "tipo": "Big bag",
+    "material": "Fibra celulósica",
+    "caracteristica": "Rígida",
+    "acondicionamento": "Sólido",
+    "medida": "Kg",
+    "valor": "20"
+  },
+  "selectors": {
+    "login": {
+      "loginButton": ".mt-3 > .br-button",
+      "actionButton": ":nth-child(1) > [data-th=\"Ação\"] > .br-button",
+      "profileSelect": ".form-select",
+      "primaryButton": ".primary"
+    },
+    "navigation": {
+      "mainMenu": "[data-target=\"#main-navigation\"]",
+      "solicitarRegistro": "[href=\"/sia/solicitar-registro\"] > .content"
+    },
+    "form": {
+      "tipoRegistro": "#tipoRegistro",
+      "tipoProduto": "#tipoProduto",
+      "marcaComercial": "#marcaComercial",
+      "descricao": ".col.br-input",
+      "justificativa": "#justificativa",
+      "consultarPTR": "#consultarPTR",
+      "nomeQuimico": "#nomeQuimico",
+      "exposicao": "#exposicao"
+    }
+  }
+} 

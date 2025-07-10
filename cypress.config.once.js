@@ -5,16 +5,16 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    // Configurações para lidar com problemas de conectividade
+    // Configurações para execução única (sem retries)
     defaultCommandTimeout: 15000,
     requestTimeout: 15000,
     responseTimeout: 15000,
     pageLoadTimeout: 30000,
     
-    // Configurações de retry - DESABILITADO para executar apenas uma vez
+    // RETRIES DESABILITADOS - executa apenas uma vez
     retries: {
-      runMode: 0,
-      openMode: 0
+      runMode: 0,    // 0 = sem retries no modo run
+      openMode: 0    // 0 = sem retries no modo open
     },
     
     // Configurações de vídeo e screenshots
@@ -31,15 +31,13 @@ module.exports = defineConfig({
     // Configurações de base URL (opcional)
     baseUrl: null,
     
-    // Configurações de proxy (se necessário)
-    // proxy: {
-    //   host: 'proxy.example.com',
-    //   port: 8080
-    // },
+    // Configuração para parar após execução
+    exitOnError: true,
     
-    // Configurações de certificados SSL (se necessário)
-    // ssl: {
-    //   rejectUnauthorized: false
-    // }
+    // Configuração para não aguardar após execução
+    waitForAnimations: false,
+    
+    // Configuração para parar imediatamente em caso de falha
+    stopOnFirstFailure: true
   },
-});
+}); 
